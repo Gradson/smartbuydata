@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: create/01-product.xml
+      relativeToChangelogFile: true

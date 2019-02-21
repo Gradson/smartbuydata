@@ -1,0 +1,47 @@
+#Server
+server:
+  servlet:
+    contextPath: /smartbuy
+  context-path: /smartbuy
+  port: 8081
+  error.whitelabel.enabled: false
+
+#Endpoints
+endpoints:
+  enabled: true
+  sensitive: false
+  liquibase.enabled: true
+
+#Management
+management.security.enabled: false
+
+#Spring
+spring:
+  profiles.active: local
+  datasource.driver-class-name: org.postgresql.Driver
+  http:
+    encoding.charset: UTF-8
+    encoding.enabled: true
+    multipart:
+      enabled: true
+      max-file-size: 300MB
+      max-request-size: 300MB
+  jpa:
+    database: POSTGRESQL
+    properties.hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc.lob.non_contextual_creation: true
+  jackson:
+    serialization.fail-on-empty-beans: false
+  hibernate:
+    implicit_naming_strategy: jpa
+  mvc.dispatch-options-request: true
+
+
+#Liquibase
+liquibase:
+  change-log: classpath:db/db-changelog.xml
+  enabled: true
+
+#Logging
+logging.pattern.console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"

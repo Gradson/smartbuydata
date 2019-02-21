@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate.ddl-auto: none
+    generate-ddl: false
+    show-sql: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/smartbuy
+    name: smartbuy
+    username: smartbuy
+    password: smartbuy
